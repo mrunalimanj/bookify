@@ -9,8 +9,10 @@ def create_playlist(user, tracks, name, description):
     cid = data['cid']
     secret = data['secret']
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
-    sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-    spoauth = SpotifyOAuth(cid, secret, 'http://localhost/')
+    spoauth = SpotifyOAuth(cid, secret, "https://github.com/mrunalimanj/bookify")
     print(spoauth.get_authorize_url())
-    raise Exception()
+    sp = spotipy.client.Spotify(oauth_manager=spoauth, client_credentials_manager=client_credentials_manager)
+    done_indicate = input("Type done once you have logged in: ")
     sp.user_playlist_create(user, name, description=description)
+    for track in tracks:
+        continue
