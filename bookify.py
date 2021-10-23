@@ -16,4 +16,4 @@ query = qe.get_query(text)
 uris = su.get_song_uris(query)
 
 # Create playlist out of song URIs
-cp.create_playlist('313hgvmzvhgvdlufnhxwairtxxna', uris, title, "blah", cid, secret)
+cp.create_playlist('313hgvmzvhgvdlufnhxwairtxxna', uris, title, "blah")
