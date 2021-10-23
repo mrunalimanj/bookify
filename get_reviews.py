@@ -16,7 +16,7 @@ def get_description_from_request(data):
         # take top hit
         top_hit = data['items'][0]["volumeInfo"]
         isbns = top_hit["industryIdentifiers"]
-        return top_hits["description"]
+        return top_hit["description"]
 
 # top function
 def get_description_from_title(title_name):
