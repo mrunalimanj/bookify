@@ -16,6 +16,7 @@ def create_playlist(user, tracks, name, description):
     token = util.prompt_for_user_token(user, scope)
     sp = spotipy.client.Spotify(auth=token, client_credentials_manager=client_credentials_manager)
     done_indicate = input("Type done once you have logged in: ")
-    print(sp.user_playlist_create(user, name, description=description))
-    for track in tracks:
-        continue
+    playlist_data = sp.user_playlist_create(user, name, description=description)
+    playlist_id = playlist_data["id"]
+    sp.playlist_add_items(playlist_id, tracks, position=None)
+    
