@@ -5,6 +5,7 @@ import get_song_uris as su
 
 # Get book title from user
 title = input("Title of book you are reading: ")
+user = input("Spotify username: ")
 
 # Get description of book from title
 text = gr.get_description_from_title(title)
@@ -16,4 +17,4 @@ query = qe.get_query(text)
 uris = su.get_song_uris(query)
 
 # Create playlist out of song URIs
-cp.create_playlist('sachi2ash', uris, title, "blah")
+cp.create_playlist(user, uris, title, "blah")
