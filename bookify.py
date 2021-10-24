@@ -17,4 +17,4 @@ query = qe.get_query(text)
 uris = su.get_song_uris(query)
 
 # Create playlist out of song URIs
-cp.create_playlist(user, uris, title, "blah")
+cp.create_playlist(user, uris, title, f"songs to match the vibe of {title}")
